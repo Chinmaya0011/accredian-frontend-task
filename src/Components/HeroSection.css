@@ -1,0 +1,73 @@
+/* HeroSection.css */
+
+.hero-section {
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .text-overlay {
+    margin-bottom: 20px;
+  }
+  
+  .title {
+    font-size: 2.5rem; /* Large font size for the title */
+    font-weight: bold;
+    color: #333; /* Dark grey color for the title */
+    margin: 10px 0;
+  }
+  
+  .description {
+    font-size: 1.2rem;
+    color: #666; /* Medium grey color for the description */
+    margin: 10px 0;
+  }
+  
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff; /* White text color */
+    background-color: #007bff; /* Primary blue background color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .cta-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  .image-container {
+    margin-top: 20px;
+  }
+  
+  .banner-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Rounded corners for the image */
+  }
+  
+  /* Responsive Design */
+  @media (min-width: 768px) {
+    .hero-section {
+      flex-direction: row;
+      text-align: left;
+    }
+  
+    .text-overlay {
+      flex: 1;
+      margin-right: 20px;
+    }
+  
+    .image-container {
+      flex: 1;
+      margin-top: 0;
+    }
+  }
+  

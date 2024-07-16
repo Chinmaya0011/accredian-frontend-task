@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.jsx
+import React, { useState } from 'react';
+import HeroSection from './Components/HeroSection';
+import ReferralModal from './Components/ReferralModal';
+import axios from 'axios';
 
-function App() {
+const App = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const handleReferClick = () => {
+    setModalOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setModalOpen(false);
+  };
+
+  const handleFormSubmit = async (data) => {
+    try {
+      await axios.post('http://localhost:3001/api/referral', data);
+      alert('Referral submitted successfully!');
+    } catch (error) {
+      alert('Failed to submit referral.');
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <HeroSection onReferClick={handleReferClick} />
+      <ReferralModal open={modalOpen} onClose={handleModalClose} onSubmit={handleFormSubmit} />
     </div>
   );
-}
+};
 
 export default App;
